@@ -127,8 +127,8 @@ export const Modal = styled.div`
       'rules rules ';
     justify-content: space-between;
     align-items: center;
-    width: 300px;
-    height: 300px;
+    width: 340px;
+    height: 340px;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -140,6 +140,8 @@ export const ModalTitle = styled.h1`
   @media (min-width: 1300px) {
     font-size: 20px;
     grid-area: title;
+    justify-self: flex-start;
+    padding-left: 20px;
   }
 `;
 
@@ -148,6 +150,8 @@ export const ModalImage = styled.img`
   height: 200px;
 
   @media (min-width: 1300px) {
+    width: 250px;
+    height: 250px;
     grid-area: rules;
     margin: auto;
   }
@@ -167,6 +171,8 @@ export const ModalClose = styled.button`
 
   @media (min-width: 1300px) {
     grid-area: closeButton;
+    justify-self: flex-end;
+    padding-right: 20px;
     & img {
       width: 20px;
     }
