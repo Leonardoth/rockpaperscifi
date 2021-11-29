@@ -28,12 +28,12 @@ import { ThemeContext } from 'styled-components';
 function Main({ score, setScore }) {
   const [isOpen, setIsOpen] = useState(false);
   const { colors } = useContext(ThemeContext);
-  const [gameResult, setGameResult] = useState('Waiting Result');
+  const [gameResult, setGameResult] = useState(undefined);
   const [gameOptions, setGameOptions] = useState(['Rock', 'Paper', 'Scissors']);
   const [playerSelection, setPlayerSelection] = useState(undefined);
   const [houseSelection, setHouseSelection] = useState(undefined);
   const [gameConfig, setGameConfig] = useState({
-    isPlaying: true,
+    isPlaying: false,
     pointsPerWin: 1,
     pointsPerDraw: 0,
     Rock: {
@@ -65,7 +65,7 @@ function Main({ score, setScore }) {
     setPlayerSelection(undefined);
     setHouseSelection(undefined);
     setGameConfig({ ...gameConfig, isPlaying: false });
-    setGameResult('Waiting Result');
+    setGameResult(undefined);
   }
 
   function gameEnd(condition) {
@@ -148,8 +148,14 @@ function Main({ score, setScore }) {
           ) : (
             ''
           )}
-          <GameResult>{gameResult}</GameResult>
-          <GameButton onClick={() => gameReset()}>Play Again</GameButton>
+          {gameResult ? (
+            <>
+              <GameResult>{gameResult}</GameResult>
+              <GameButton onClick={() => gameReset()}>Play Again</GameButton>
+            </>
+          ) : (
+            ''
+          )}
         </GameContainer>
       ) : (
         <ButtonsContainer>

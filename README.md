@@ -34,7 +34,19 @@
   - Solution:
     - I had to import useEffect, set it to call the function, passing the states as params. Doesn't seem to be the right way, but it's working as intended.
 
+- Challenge: Using grid in the mobile, when only with one 'player', the layout is not centralized.
+  Problem: Label and Button were not centralized, until the house draw it's option.
+
+  - Tried:
+
+    - Changing elements width, did not work.
+    - Changing template-areas, it'd only make it worse.
+
+  - Solution:
+    - At the moment, we hide the label/button until the result is not shown.
+
 ## TODO:
 
 - Clean the Code better!
 - Take Game Logic to another file. It's Confusing rn.
+- Add the bonus challenge (Lizard, Spock)

@@ -183,9 +183,10 @@ export const ModalClose = styled.button`
 export const GameContainer = styled.div`
   display: grid;
   grid-template-areas:
-    'FirstPlayer FirstPlayer SecondPlayer SecondPlayer'
-    '. Result Result .'
-    '. Button Button .';
+    'FirstPlayer FirstPlayer . SecondPlayer SecondPlayer'
+    '. Result Result Result .'
+    '. Button  Button Button .';
+  gap: 10px 0px;
   @media (min-width: 1300px) {
     margin-top: 50px;
     gap: 0px 30px;
@@ -202,9 +203,11 @@ export const GameLabel = styled.label`
   text-transform: uppercase;
 `;
 export const GameResult = styled.h1`
-  margin-top: 50px;
+  margin: auto;
+  margin-top: 30px;
   grid-area: Result;
   text-transform: uppercase;
+  text-align: center;
 `;
 export const GameButton = styled(RulesButton)`
   grid-area: Button;
@@ -214,8 +217,14 @@ export const GameButton = styled(RulesButton)`
   letter-spacing: 2px;
   height: 40px;
   border-radius: 8px;
+  width: 200px;
 `;
-export const Play = styled(Button)``;
+export const Play = styled(Button)`
+  cursor: default;
+  &:active {
+    transform: none;
+  }
+`;
 
 export const Player = styled.div`
   display: flex;
@@ -225,6 +234,7 @@ export const Player = styled.div`
   grid-area: FirstPlayer;
   justify-self: flex-start;
   gap: 30px;
+
   @media (min-width: 1300px) {
     flex-direction: column-reverse;
   }
