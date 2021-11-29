@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  gap: 50px;
+  gap: 20px;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -38,14 +38,15 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: grab;
   &:active {
     transform: scale(90%);
   }
   &::before {
     content: '';
     position: absolute;
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     z-index: -1;
     background: ${props =>
@@ -59,8 +60,8 @@ export const Button = styled.button`
     height: 120px;
 
     &::before {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
     }
   }
 `;
@@ -177,4 +178,59 @@ export const ModalClose = styled.button`
       width: 20px;
     }
   }
+`;
+
+export const GameContainer = styled.div`
+  display: grid;
+  grid-template-areas:
+    'FirstPlayer FirstPlayer SecondPlayer SecondPlayer'
+    '. Result Result .'
+    '. Button Button .';
+  @media (min-width: 1300px) {
+    margin-top: 50px;
+    gap: 0px 30px;
+    grid-template-areas:
+      'FirstPlayer Result  SecondPlayer'
+      'FirstPlayer Button  SecondPlayer'
+      'FirstPlayer .  SecondPlayer';
+  }
+`;
+
+export const GameLabel = styled.label`
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+`;
+export const GameResult = styled.h1`
+  margin-top: 50px;
+  grid-area: Result;
+  text-transform: uppercase;
+`;
+export const GameButton = styled(RulesButton)`
+  grid-area: Button;
+  background-color: white;
+  color: ${props => props.theme.colors.DarkText};
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 40px;
+  border-radius: 8px;
+`;
+export const Play = styled(Button)``;
+
+export const Player = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: FirstPlayer;
+  justify-self: flex-start;
+  gap: 30px;
+  @media (min-width: 1300px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+export const House = styled(Player)`
+  grid-area: SecondPlayer;
+  justify-self: flex-end;
 `;

@@ -8,7 +8,7 @@ import {
   ScoreValue,
 } from './styles';
 
-export default function Header() {
+export default function Header({ score }) {
   return (
     <Container>
       <TextDiv>
@@ -18,7 +18,7 @@ export default function Header() {
       </TextDiv>
       <ScoreContainer background='white'>
         <ScoreLabel>Score</ScoreLabel>
-        <ScoreValue>12</ScoreValue>
+        <ScoreValue>{score}</ScoreValue>
       </ScoreContainer>
     </Container>
   );
