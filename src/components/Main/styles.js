@@ -146,7 +146,7 @@ export const ModalTitle = styled.h1`
 `;
 
 export const ModalImage = styled.img`
-  width: 200px;
+  width: 250px;
   height: 200px;
 
   @media (min-width: 1300px) {
