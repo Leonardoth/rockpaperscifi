@@ -18,9 +18,14 @@ import {
   Player,
   House,
 } from './styles';
+
+// Play icons
 import Paper from '../../assets/images/icon-paper.svg';
 import Rock from '../../assets/images/icon-rock.svg';
 import Scissors from '../../assets/images/icon-scissors.svg';
+import Spock from '../../assets/images/icon-spock.svg';
+import Lizard from '../../assets/images/icon-lizard.svg';
+
 import Rules from '../../assets/images/image-rules.svg';
 import CloseButton from '../../assets/images/icon-close.svg';
 import { ThemeContext } from 'styled-components';
@@ -29,7 +34,13 @@ function Main({ score, setScore }) {
   const [isOpen, setIsOpen] = useState(false);
   const { colors } = useContext(ThemeContext);
   const [gameResult, setGameResult] = useState(undefined);
-  const [gameOptions, setGameOptions] = useState(['Rock', 'Paper', 'Scissors']);
+  const [gameOptions, setGameOptions] = useState([
+    'Rock',
+    'Paper',
+    'Scissors',
+    'Spock',
+    'Lizard',
+  ]);
   const [playerSelection, setPlayerSelection] = useState(undefined);
   const [houseSelection, setHouseSelection] = useState(undefined);
   const [gameConfig, setGameConfig] = useState({
@@ -40,19 +51,31 @@ function Main({ score, setScore }) {
       image: Rock,
       gradient: colors.RockGradient,
       alt: 'Rock',
-      losesTo: ['Paper'],
+      losesTo: ['Paper', 'Spock'],
     },
     Paper: {
       image: Paper,
       gradient: colors.PaperGradient,
       alt: 'Paper',
-      losesTo: ['Scissors'],
+      losesTo: ['Scissors', 'Lizard'],
     },
     Scissors: {
       image: Scissors,
       gradient: colors.ScissorsGradient,
       alt: 'Scissors',
-      losesTo: ['Rock'],
+      losesTo: ['Rock', 'Spock'],
+    },
+    Spock: {
+      image: Spock,
+      gradient: colors.SpockGradient,
+      alt: 'Spock',
+      losesTo: ['Paper', 'Lizard'],
+    },
+    Lizard: {
+      image: Lizard,
+      gradient: colors.LizardGradient,
+      alt: 'Lizard',
+      losesTo: ['Rock', 'Scissors'],
     },
   });
 
@@ -176,6 +199,18 @@ function Main({ score, setScore }) {
             onClick={() => selectPlayerOption('Rock')}
           >
             <Image src={Rock} alt='Rock' />
+          </Button>
+          <Button
+            borderGradient={colors.LizardGradient}
+            onClick={() => selectPlayerOption('Lizard')}
+          >
+            <Image src={Lizard} alt='Lizard' />
+          </Button>
+          <Button
+            borderGradient={colors.SpockGradient}
+            onClick={() => selectPlayerOption('Spock')}
+          >
+            <Image src={Spock} alt='Spock' />
           </Button>
         </ButtonsContainer>
       )}
