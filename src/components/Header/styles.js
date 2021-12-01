@@ -37,7 +37,7 @@ export const Span = styled.span`
 export const ScoreContainer = styled.div`
   background: ${({ background }) => (background ? background : 'none')};
   width: 60px;
-  padding: 10px 5px;
+  padding: 15px 10px;
   border-radius: 3px;
   display: flex;
   flex-direction: column;

@@ -49,7 +49,8 @@
 
 - Clean the Code better!
 - Take Game Logic to another file. It's Confusing rn.
-- Add the bonus challenge (Lizard, Spock)
+- ~~Add the bonus challenge (Lizard, Spock)~~
 - Save score on localStorage
   - Option to reset score
 - Add Specific messages for each result, like, "Scissors cuts paper!" before the "YOU WIN"
+- Fix to Pixel-perfect level so buttons match design.
