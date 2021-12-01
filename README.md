@@ -52,3 +52,4 @@
 - Add the bonus challenge (Lizard, Spock)
 - Save score on localStorage
   - Option to reset score
+- Add Specific messages for each result, like, "Scissors cuts paper!" before the "YOU WIN"
