@@ -15,6 +15,8 @@ export default function Header({ score }) {
         <Span>Rock</Span>
         <Span>Paper</Span>
         <Span>Scissors</Span>
+        <Span>Lizard</Span>
+        <Span>Spock</Span>
       </TextDiv>
       <ScoreContainer background='white'>
         <ScoreLabel>Score</ScoreLabel>
