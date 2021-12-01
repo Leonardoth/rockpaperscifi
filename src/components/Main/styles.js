@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bgTriangle from '../../assets/images/bg-triangle.svg';
+import bgPentagon from '../../assets/images/bg-pentagon.svg';
 
 export const Container = styled.div`
   display: flex;
@@ -12,27 +13,47 @@ export const Container = styled.div`
 export const ButtonsContainer = styled.div`
   margin: 50px auto;
   width: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 5rem 1fr;
+  grid-template-rows: 20px 150px;
   align-items: center;
-  gap: 20px 50px;
-  background: url(${bgTriangle});
+  justify-items: center;
+  background: url(${bgPentagon});
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 150px;
+  background-size: 200px;
+
   z-index: 1;
+
+  & > :first-child {
+    grid-area: 1/2;
+  }
+  & > :nth-child(2) {
+    grid-area: 2 / 1;
+  }
+  & > :nth-child(3) {
+    grid-area: 2 / 3;
+  }
+  & > :nth-child(4) {
+    grid-area: 3 / 1;
+  }
+  & > :nth-child(5) {
+    grid-area: 3 / 3;
+  }
   @media (min-width: 1300px) {
     width: 300px;
     height: 300px;
-    background-size: 200px;
+    grid-template-rows: 50px 200px;
+    grid-template-columns: 1fr 8rem 1fr;
+    background-size: 300px;
+    background-position-y: 20px;
   }
 `;
 
 export const Button = styled.button`
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: none;
   display: flex;
@@ -45,8 +66,8 @@ export const Button = styled.button`
   &::before {
     content: '';
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 120%;
+    height: 120%;
     border-radius: 50%;
     z-index: -1;
     background: ${props =>
@@ -56,12 +77,12 @@ export const Button = styled.button`
   }
 
   @media (min-width: 1300px) {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
 
     &::before {
-      width: 150px;
-      height: 150px;
+      width: 120%;
+      height: 120%;
     }
   }
 `;

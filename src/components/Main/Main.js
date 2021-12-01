@@ -26,7 +26,7 @@ import Scissors from '../../assets/images/icon-scissors.svg';
 import Spock from '../../assets/images/icon-spock.svg';
 import Lizard from '../../assets/images/icon-lizard.svg';
 
-import Rules from '../../assets/images/image-rules.svg';
+import Rules from '../../assets/images/image-rules-bonus.svg';
 import CloseButton from '../../assets/images/icon-close.svg';
 import { ThemeContext } from 'styled-components';
 
@@ -183,22 +183,22 @@ function Main({ score, setScore }) {
       ) : (
         <ButtonsContainer>
           <Button
-            borderGradient={colors.PaperGradient}
-            onClick={() => selectPlayerOption('Paper')}
-          >
-            <Image src={Paper} alt='Paper' />
-          </Button>
-          <Button
             borderGradient={colors.ScissorsGradient}
             onClick={() => selectPlayerOption('Scissors')}
           >
             <Image src={Scissors} alt='Scissors' />
           </Button>
           <Button
-            borderGradient={colors.RockGradient}
-            onClick={() => selectPlayerOption('Rock')}
+            borderGradient={colors.SpockGradient}
+            onClick={() => selectPlayerOption('Spock')}
           >
-            <Image src={Rock} alt='Rock' />
+            <Image src={Spock} alt='Spock' />
+          </Button>
+          <Button
+            borderGradient={colors.PaperGradient}
+            onClick={() => selectPlayerOption('Paper')}
+          >
+            <Image src={Paper} alt='Paper' />
           </Button>
           <Button
             borderGradient={colors.LizardGradient}
@@ -207,10 +207,10 @@ function Main({ score, setScore }) {
             <Image src={Lizard} alt='Lizard' />
           </Button>
           <Button
-            borderGradient={colors.SpockGradient}
-            onClick={() => selectPlayerOption('Spock')}
+            borderGradient={colors.RockGradient}
+            onClick={() => selectPlayerOption('Rock')}
           >
-            <Image src={Spock} alt='Spock' />
+            <Image src={Rock} alt='Rock' />
           </Button>
         </ButtonsContainer>
       )}
