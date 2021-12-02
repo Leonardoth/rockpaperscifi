@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import bgTriangle from '../../assets/images/bg-triangle.svg';
 import bgPentagon from '../../assets/images/bg-pentagon.svg';
 
 export const Container = styled.div`
@@ -15,7 +14,7 @@ export const ButtonsContainer = styled.div`
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr 5rem 1fr;
-  grid-template-rows: 20px 150px;
+  grid-template-rows: 5px 150px;
   align-items: center;
   justify-items: center;
   background: url(${bgPentagon});
@@ -43,8 +42,8 @@ export const ButtonsContainer = styled.div`
   @media (min-width: 1300px) {
     width: 300px;
     height: 300px;
-    grid-template-rows: 50px 200px;
-    grid-template-columns: 1fr 8rem 1fr;
+    grid-template-rows: 30px 200px;
+    grid-template-columns: 1fr 130px 1fr;
     background-size: 300px;
     background-position-y: 20px;
   }
@@ -204,17 +203,17 @@ export const ModalClose = styled.button`
 export const GameContainer = styled.div`
   display: grid;
   grid-template-areas:
-    'FirstPlayer FirstPlayer . SecondPlayer SecondPlayer'
-    '. Result Result Result .'
-    '. Button  Button Button .';
-  gap: 10px 0px;
+    'FirstPlayer . SecondPlayer'
+    'Result Result Result';
+  grid-template-rows: 1fr 90px;
+  gap: 30px 0px;
   @media (min-width: 1300px) {
     margin-top: 50px;
     gap: 0px 30px;
     grid-template-areas:
       'FirstPlayer Result  SecondPlayer'
-      'FirstPlayer Button  SecondPlayer'
-      'FirstPlayer .  SecondPlayer';
+      'FirstPlayer Result  SecondPlayer'
+      'FirstPlayer Result  SecondPlayer';
   }
 `;
 
@@ -223,13 +222,23 @@ export const GameLabel = styled.label`
   letter-spacing: 1px;
   text-transform: uppercase;
 `;
+
+export const ResultContainer = styled.div`
+  align-self: center;
+  grid-area: Result;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+`;
+
 export const GameResult = styled.h1`
   margin: auto;
-  margin-top: 30px;
-  grid-area: Result;
   text-transform: uppercase;
   text-align: center;
 `;
+
+export const ResultExplained = styled.label``;
 export const GameButton = styled(RulesButton)`
   grid-area: Button;
   background-color: white;

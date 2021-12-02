@@ -11,8 +11,10 @@ import {
   ModalImage,
   ModalClose,
   GameContainer,
+  ResultContainer,
   GameLabel,
   GameResult,
+  ResultExplained,
   GameButton,
   Play,
   Player,
@@ -33,8 +35,11 @@ import { ThemeContext } from 'styled-components';
 function Main({ score, setScore }) {
   const [isOpen, setIsOpen] = useState(false);
   const { colors } = useContext(ThemeContext);
-  const [gameResult, setGameResult] = useState(undefined);
-  const [gameOptions, setGameOptions] = useState([
+  const [gameResult, setGameResult] = useState({
+    result: undefined,
+    message: undefined,
+  });
+  const [gameOptions] = useState([
     'Rock',
     'Paper',
     'Scissors',
@@ -52,30 +57,50 @@ function Main({ score, setScore }) {
       gradient: colors.RockGradient,
       alt: 'Rock',
       losesTo: ['Paper', 'Spock'],
+      loseMessage: {
+        Paper: 'Paper covers Rock!',
+        Spock: 'Spock vaporizes Rock!',
+      },
     },
     Paper: {
       image: Paper,
       gradient: colors.PaperGradient,
       alt: 'Paper',
       losesTo: ['Scissors', 'Lizard'],
+      loseMessage: {
+        Scissors: 'Scissors cuts Paper!',
+        Lizard: 'Lizard eats Paper!',
+      },
     },
     Scissors: {
       image: Scissors,
       gradient: colors.ScissorsGradient,
       alt: 'Scissors',
       losesTo: ['Rock', 'Spock'],
+      loseMessage: {
+        Rock: 'As it always has, Rock crushes Scissors!',
+        Spock: 'Spock smashes Scissors!',
+      },
     },
     Spock: {
       image: Spock,
       gradient: colors.SpockGradient,
       alt: 'Spock',
       losesTo: ['Paper', 'Lizard'],
+      loseMessage: {
+        Paper: 'Paper disproves Spock!',
+        Lizard: 'Lizard poisons Spock!',
+      },
     },
     Lizard: {
       image: Lizard,
       gradient: colors.LizardGradient,
       alt: 'Lizard',
       losesTo: ['Rock', 'Scissors'],
+      loseMessage: {
+        Rock: 'Rock crushes Lizard!',
+        Scissors: 'Scissors decapitates Lizard!',
+      },
     },
   });
 
@@ -83,28 +108,29 @@ function Main({ score, setScore }) {
     if (houseSelection) {
       playGame(playerSelection, houseSelection);
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [houseSelection]);
   function gameReset() {
     setPlayerSelection(undefined);
     setHouseSelection(undefined);
     setGameConfig({ ...gameConfig, isPlaying: false });
-    setGameResult(undefined);
+    setGameResult({ result: undefined, message: undefined });
   }
 
-  function gameEnd(condition) {
+  function gameEnd(condition, message = '') {
     let _score = Number.parseInt(score);
     let result = _score;
     switch (condition) {
       case 'win':
         result += gameConfig.pointsPerWin;
-        setGameResult('You Win');
+        setGameResult({ result: 'You Win', message });
         break;
       case 'draw':
         result += gameConfig.pointsPerDraw;
-        setGameResult('Draw');
+        setGameResult({ result: 'Draw', message });
         break;
       default:
-        setGameResult('You Lose');
+        setGameResult({ result: 'You Lose', message });
         break;
     }
     setScore(result);
@@ -126,11 +152,11 @@ function Main({ score, setScore }) {
 
   function playGame(player, house) {
     if (player === house) {
-      gameEnd('draw');
+      gameEnd('draw', `Well this is awkward...`);
     } else if (!gameConfig[player].losesTo.includes(house)) {
-      gameEnd('win');
+      gameEnd('win', gameConfig[house].loseMessage[player]);
     } else {
-      gameEnd('lose');
+      gameEnd('lose', gameConfig[player].loseMessage[house]);
     }
   }
   return (
@@ -171,11 +197,14 @@ function Main({ score, setScore }) {
           ) : (
             ''
           )}
-          {gameResult ? (
-            <>
-              <GameResult>{gameResult}</GameResult>
+          {gameResult.result ? (
+            <ResultContainer>
+              <ResultExplained>
+                {gameResult.message ? gameResult.message : ''}
+              </ResultExplained>
+              <GameResult>{gameResult.result}</GameResult>
               <GameButton onClick={() => gameReset()}>Play Again</GameButton>
-            </>
+            </ResultContainer>
           ) : (
             ''
           )}
