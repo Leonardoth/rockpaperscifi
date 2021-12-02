@@ -1,4 +1,4 @@
-export default {
+const defaultTheme = {
   title: 'default',
   fonts: {
     primary: `'Barlow Semi Condensed', sans-serif`,
@@ -20,3 +20,5 @@ export default {
     BackgroundGradient2: 'hsl(237, 49%, 15%)',
   },
 };
+
+export default defaultTheme;
