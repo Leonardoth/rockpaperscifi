@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import bgPentagon from '../../assets/images/bg-pentagon.svg';
 
 export const Container = styled.div`
@@ -59,12 +59,17 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   cursor: grab;
+  background: ${props =>
+    props.borderGradient
+      ? 'white'
+      : `radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%))`};
   &:active {
     transform: scale(90%);
   }
   &::before {
     content: '';
     position: absolute;
+    display: block;
     width: 120%;
     height: 120%;
     border-radius: 50%;
@@ -72,7 +77,7 @@ export const Button = styled.button`
     background: ${props =>
       props.borderGradient
         ? `linear-gradient(${props.borderGradient})`
-        : 'none'};
+        : 'radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%))'};
   }
 
   @media (min-width: 1300px) {
@@ -211,7 +216,7 @@ export const GameContainer = styled.div`
     margin-top: 50px;
     gap: 0px 30px;
     grid-template-areas:
-      'FirstPlayer Result  SecondPlayer'
+      'FirstPlayer .  SecondPlayer'
       'FirstPlayer Result  SecondPlayer'
       'FirstPlayer Result  SecondPlayer';
   }
@@ -236,6 +241,7 @@ export const GameResult = styled.h1`
   margin: auto;
   text-transform: uppercase;
   text-align: center;
+  width: 250px;
 `;
 
 export const ResultExplained = styled.label``;
@@ -249,6 +255,7 @@ export const GameButton = styled(RulesButton)`
   border-radius: 8px;
   width: 200px;
 `;
+
 export const Play = styled(Button)`
   cursor: default;
   &:active {
@@ -270,7 +277,19 @@ export const Player = styled.div`
   }
 `;
 
+const coinTurn = keyframes`
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+`;
+
 export const House = styled(Player)`
   grid-area: SecondPlayer;
   justify-self: flex-end;
+  & ${Play} {
+    animation: ${coinTurn} 2s linear;
+  }
 `;

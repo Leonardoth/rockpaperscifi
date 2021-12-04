@@ -195,7 +195,12 @@ function Main({ score, setScore }) {
               <GameLabel>The House Picked</GameLabel>
             </House>
           ) : (
-            ''
+            <House>
+              <Play>
+                <Image />
+              </Play>
+              <GameLabel>The House Picked</GameLabel>
+            </House>
           )}
           {gameResult.result ? (
             <ResultContainer>
@@ -206,7 +211,9 @@ function Main({ score, setScore }) {
               <GameButton onClick={() => gameReset()}>Play Again</GameButton>
             </ResultContainer>
           ) : (
-            ''
+            <ResultContainer>
+              <GameResult>Waiting for Result</GameResult>
+            </ResultContainer>
           )}
         </GameContainer>
       ) : (
