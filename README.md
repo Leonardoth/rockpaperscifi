@@ -49,10 +49,12 @@
 
 - Clean the Code better!
 - Take Game Logic to another file. It's Confusing rn.
-- Save score on localStorage
-  - Option to reset score
+- Option to reset score
 - Fix to Pixel-perfect level so buttons match design.
+- Show empty space until the house picks
+- Coin turning effect when player chooses/house chooses
 
+- ~~Save score on localStorage~~
 - ~~Add the bonus challenge (Lizard, Spock)~~
 - ~~Add Specific messages for each result, like, "Scissors cuts paper!" before the "YOU WIN"~~
 
