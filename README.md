@@ -4,7 +4,8 @@
 
 ## Technology Practice:
 
-    Styled components (First time)
+    - Styled components (First time)
+    - Custom Hooks
 
 ## Technology Used:
 
