@@ -88,8 +88,9 @@ export const ScoreReset = styled.button`
   animation: ${slideDown} 0.3s linear forwards;
   transform-origin: top;
   cursor: pointer;
+  font-weight: bold;
   &:hover {
-    background-color: ${props => props.theme.colors.DarkText};
+    background: ${props => props.theme.colors.DarkText};
     color: white;
   }
 `;
