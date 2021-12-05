@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/rockpaperscifi/static/js/main.fefd310c.chunk.js",
-    "main.js.map": "/rockpaperscifi/static/js/main.fefd310c.chunk.js.map",
+    "main.js": "/rockpaperscifi/static/js/main.68192115.chunk.js",
+    "main.js.map": "/rockpaperscifi/static/js/main.68192115.chunk.js.map",
     "runtime-main.js": "/rockpaperscifi/static/js/runtime-main.a5a47fb9.js",
     "runtime-main.js.map": "/rockpaperscifi/static/js/runtime-main.a5a47fb9.js.map",
     "static/js/2.3db8b3da.chunk.js": "/rockpaperscifi/static/js/2.3db8b3da.chunk.js",
@@ -20,6 +20,6 @@
   "entrypoints": [
     "static/js/runtime-main.a5a47fb9.js",
     "static/js/2.3db8b3da.chunk.js",
-    "static/js/main.fefd310c.chunk.js"
+    "static/js/main.68192115.chunk.js"
   ]
 }
