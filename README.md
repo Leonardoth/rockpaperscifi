@@ -1,3 +1,6 @@
+[Instruções/Instructions](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH/)
+[Resultado/Result](https://leonardoth.github.io/rockpaperscifi/)
+
 ## Concept:
 
     Mobile First
