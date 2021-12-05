@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/rockpaperscifi/static/js/main.fefd310c.chunk.js",
+    "main.js.map": "/rockpaperscifi/static/js/main.fefd310c.chunk.js.map",
+    "runtime-main.js": "/rockpaperscifi/static/js/runtime-main.a5a47fb9.js",
+    "runtime-main.js.map": "/rockpaperscifi/static/js/runtime-main.a5a47fb9.js.map",
+    "static/js/2.3db8b3da.chunk.js": "/rockpaperscifi/static/js/2.3db8b3da.chunk.js",
+    "static/js/2.3db8b3da.chunk.js.map": "/rockpaperscifi/static/js/2.3db8b3da.chunk.js.map",
+    "index.html": "/rockpaperscifi/index.html",
+    "static/js/2.3db8b3da.chunk.js.LICENSE.txt": "/rockpaperscifi/static/js/2.3db8b3da.chunk.js.LICENSE.txt",
+    "static/media/bg-pentagon.1ad6d365.svg": "/rockpaperscifi/static/media/bg-pentagon.1ad6d365.svg",
+    "static/media/icon-close.bde602ec.svg": "/rockpaperscifi/static/media/icon-close.bde602ec.svg",
+    "static/media/icon-lizard.0f83914c.svg": "/rockpaperscifi/static/media/icon-lizard.0f83914c.svg",
+    "static/media/icon-paper.8b57a6b1.svg": "/rockpaperscifi/static/media/icon-paper.8b57a6b1.svg",
+    "static/media/icon-rock.476e90a9.svg": "/rockpaperscifi/static/media/icon-rock.476e90a9.svg",
+    "static/media/icon-scissors.3b1a5d7e.svg": "/rockpaperscifi/static/media/icon-scissors.3b1a5d7e.svg",
+    "static/media/icon-spock.f4d7eee8.svg": "/rockpaperscifi/static/media/icon-spock.f4d7eee8.svg",
+    "static/media/image-rules-bonus.513320fb.svg": "/rockpaperscifi/static/media/image-rules-bonus.513320fb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a5a47fb9.js",
+    "static/js/2.3db8b3da.chunk.js",
+    "static/js/main.fefd310c.chunk.js"
+  ]
+}
