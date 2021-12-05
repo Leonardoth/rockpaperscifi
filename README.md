@@ -51,15 +51,14 @@
 - Clean the Code better!
 - Take Game Logic to another file. It's Confusing rn.
 - Fix to Pixel-perfect level so buttons match design.
-- Show empty space until the house picks
 - Fix ::before on coinTurn animation (the pseudoelement show as a background then changes to normal)
 
 - ~~Add the bonus challenge (Lizard, Spock)~~
+- ~~Show empty space until the house picks~~
 
 ## Extras (Things that were not in the challenge):
 
-- Option to reset score
-
+- ~~Option to reset score~~
 - ~~Coin turning effect when player chooses/house chooses~~
 - ~~Add Specific messages for each result, like, "Scissors cuts paper!" before the "YOU WIN"~~
 - ~~Save score on localStorage~~
