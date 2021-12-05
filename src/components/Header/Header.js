@@ -6,9 +6,14 @@ import {
   TextDiv,
   ScoreLabel,
   ScoreValue,
+  ScoreReset,
 } from './styles';
 
-export default function Header({ score }) {
+export default function Header({ score, setScore }) {
+  function resetScore() {
+    setScore(0);
+  }
+
   return (
     <Container>
       <TextDiv>
@@ -21,6 +26,7 @@ export default function Header({ score }) {
       <ScoreContainer background='white'>
         <ScoreLabel>Score</ScoreLabel>
         <ScoreValue>{score}</ScoreValue>
+        <ScoreReset onClick={() => resetScore()}>Reset</ScoreReset>
       </ScoreContainer>
     </Container>
   );

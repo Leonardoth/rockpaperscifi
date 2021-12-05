@@ -13,7 +13,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header score={score} />
+      <Header score={score} setScore={setScore} />
       <Main score={score} setScore={setScore} />
       <Footer />
     </ThemeProvider>
